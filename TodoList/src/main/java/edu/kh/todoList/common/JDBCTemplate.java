@@ -59,6 +59,7 @@ public class JDBCTemplate {
 			// -> src/main/resources 또는 WEB-INF/classes 에서 찾음
 			
 			// getPath() : URL 객체에서 실제 파일 시스템의 경로를 절대경로 방법으로 얻어옴
+			System.out.println(filePath);
 			
 			prop.loadFromXML(new FileInputStream(filePath));
 			

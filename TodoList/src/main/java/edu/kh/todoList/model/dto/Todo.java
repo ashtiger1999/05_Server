@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Todo {
 	
-	private int todoNO;				// todo 번호
+	private int todoNo;				// todo 번호
 	private String todoTitle;		// todo 제목
 	private String todoDetail;		// todo 상세내용
 	private boolean todoComplete;	// todo 완료 여부

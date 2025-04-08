@@ -4,4 +4,36 @@
 
 	<!-- sql 작성 -->
 
+	<!-- 할 일 전체 조회 -->
+	<entry key='todoListFullView'>
+		SELECT todo_no, todo_title, todo_complete,
+		TO_CHAR(REG_DATE,'YYYY-MM-DD HH24:MI:SS')REG_DATE
+		FROM tb_todo
+		ORDER BY todo_no
+	</entry>
+	
+	<entry key="getCompleteCount">
+		Select count(*)
+		from tb_todo
+		where todo_complete = 1
+	</entry>
+	
+	<entry key="todoAdd">
+		insert into tb_todo
+		values(seq_todo_no.nextval, ?, ?, default, default)
+	</entry>
+	
+	<entry key="todoDetail">
+		select todo_no, todo_title, todo_detail, todo_complete, 
+			   TO_CHAR(REG_DATE,'YYYY-MM-DD HH24:MI:SS')REG_DATE
+		from tb_todo
+		where todo_no = ? 
+	</entry>
+	
+	<entry key="todoComplete">
+		update tb_todo
+		set todo_complete = decode(todo_complete,0,1,0)
+		where todo_no = ?
+	</entry>
+
 </properties>

@@ -47,6 +47,10 @@ COMMIT;
 
 SELECT * FROM TB_TODO;
 
+SELECT todo_no, todo_title, todo_complete, TO_CHAR(REG_DATE,'YYYY-MM-DD HH24:MI:SS')REG_DATE
+FROM tb_todo
+ORDER BY todo_no;
+
 
 
 
